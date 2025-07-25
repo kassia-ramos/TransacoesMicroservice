@@ -1,0 +1,36 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.resharper
+*.dotSettings
+*.opensdf
+*.dbmdl
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+*.exe
+*.pdb
+*.dll
+*.obj
+*.log
+*.bak
+*.nupkg
+*.build.log
+
+# NuGet
+*.nuget
+/packages/
+
+# Rider (JetBrains IDE)
+.idea/
+
+# Node.js (if applicable)
+node_modules/
+
+# macOS
+.DS_Store
+
+# Thumbs.db (Windows)
+Thumbs.db

@@ -1,0 +1,304 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.API\\Transacoes.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.API\\Transacoes.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.API\\Transacoes.API.csproj",
+        "projectName": "Transacoes.API",
+        "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.API\\Transacoes.API.csproj",
+        "packagesPath": "C:\\Users\\kassi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kassi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Application\\Transacoes.Application.csproj": {
+                "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Application\\Transacoes.Application.csproj"
+              },
+              "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\Transacoes.Domain.csproj": {
+                "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\Transacoes.Domain.csproj"
+              },
+              "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Infrastructure\\Transacoes.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Infrastructure\\Transacoes.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Application\\Transacoes.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Application\\Transacoes.Application.csproj",
+        "projectName": "Transacoes.Application",
+        "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Application\\Transacoes.Application.csproj",
+        "packagesPath": "C:\\Users\\kassi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kassi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\Transacoes.Domain.csproj": {
+                "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\Transacoes.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\Transacoes.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\Transacoes.Domain.csproj",
+        "projectName": "Transacoes.Domain",
+        "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\Transacoes.Domain.csproj",
+        "packagesPath": "C:\\Users\\kassi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kassi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Infrastructure\\Transacoes.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Infrastructure\\Transacoes.Infrastructure.csproj",
+        "projectName": "Transacoes.Infrastructure",
+        "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Infrastructure\\Transacoes.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\kassi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kassi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Application\\Transacoes.Application.csproj": {
+                "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Application\\Transacoes.Application.csproj"
+              },
+              "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\Transacoes.Domain.csproj": {
+                "projectPath": "C:\\Users\\kassi\\Desktop\\Kassia_Ramos\\BEMOL\\TransacoesMicroservice\\Transacoes.Domain\\Transacoes.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
