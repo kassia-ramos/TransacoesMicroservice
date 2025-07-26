@@ -1,38 +1,44 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Transacoes.Application.Interfaces; // Referencia a interface ITransacaoService
-using Transacoes.Domain.Entities;      // Referencia a entidade Transacao
-using Transacoes.Domain.Interfaces;     // Referencia a interface ITransacaoRepository
+using Transacoes.Application.Interfaces; 
+using Transacoes.Domain.Entities;
+using Transacoes.Domain.Interfaces;
 
-namespace Transacoes.Application.Services // <-- Este é o namespace que faltava!
+namespace Transacoes.Application.Services
 {
     public class TransacaoService : ITransacaoService
     {
         private readonly ITransacaoRepository _transacaoRepository;
+        private readonly IMensagemServiceBusProdutor _mensagemServiceProdutor;
 
-        // Construtor: Recebe uma instância de ITransacaoRepository via injeção de dependência
-        public TransacaoService(ITransacaoRepository transacaoRepository)
+        // Construtor: recebe ITransacaoRepository e IMensagemServiceProdutor
+        public TransacaoService(
+            ITransacaoRepository transacaoRepository,
+            IMensagemServiceBusProdutor mensagemServiceProdutor)
         {
             _transacaoRepository = transacaoRepository;
+            _mensagemServiceProdutor = mensagemServiceProdutor;
         }
 
-        // Implementação do método CriarTransacaoAsync
         public async Task<Transacao> CriarTransacaoAsync(Transacao transacao)
         {
-            // Definir a data da transação se não for fornecida
             if (transacao.Data == default(DateTime))
             {
                 transacao.Data = DateTime.UtcNow;
             }
 
             await _transacaoRepository.AdicionarAsync(transacao);
-            return transacao; // Retorna a transação com o Id gerado pelo MongoDB
+
+            // Envia a transação para a fila do Service Bus APÓS salvar no MongoDB
+            await _mensagemServiceProdutor.EnviarMensagemTransacaoAsync(transacao);
+
+            return transacao;
         }
 
-        // Implementação do método ObterTodasTransacoesAsync
         public async Task<IEnumerable<Transacao>> ObterTodasTransacoesAsync()
         {
             return await _transacaoRepository.ObterTodasAsync();
         }
+
     }
 }

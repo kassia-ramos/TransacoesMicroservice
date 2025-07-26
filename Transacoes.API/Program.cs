@@ -1,27 +1,29 @@
-using Microsoft.Extensions.Options; // Importar para usar IOptions
+using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using Transacoes.Application.Interfaces;
 using Transacoes.Application.Services;
 using Transacoes.Domain.Interfaces;
 using Transacoes.Infrastructure.Repositories;
 using Transacoes.Infrastructure.Settings;
+using Azure.Messaging.ServiceBus;
+// Adicionado este using para a nova implementaï¿½ï¿½o do produtor de mensagens na camada Infrastructure:
+using Transacoes.Infrastructure.Services; // Certifique-se que esta ï¿½ a pasta correta (Services ou Producers)
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- Seção: Configuração da Injeção de Dependência ---
 
-// 1. Carregar as configurações do banco
+// Carregar as configuraï¿½ï¿½es do banco
 builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDbSettings"));
 
-// 2. Registrar o IMongoClient 
-// Registra o cliente MongoDB como um singleton. Uma única instância será usada durante a vida do app.
+// Registrar o IMongoClient
+// Registra o cliente MongoDB como um singleton. Uma ï¿½nica instï¿½ncia serï¿½ usada durante a vida do app.
 builder.Services.AddSingleton<IMongoClient>(sp =>
 {
     var settings = sp.GetRequiredService<IOptions<MongoDbSettings>>().Value;
     return new MongoClient(settings.ConnectionString);
 });
 
-// 3. Registra o IMongoDatabase 
+// Registra o IMongoDatabase
 // Registra o banco de dados MongoDB como um singleton.
 builder.Services.AddSingleton<IMongoDatabase>(sp =>
 {
@@ -30,15 +32,30 @@ builder.Services.AddSingleton<IMongoDatabase>(sp =>
     return mongoClient.GetDatabase(settings.DatabaseName);
 });
 
-// uma nova instância para cada requisição HTTP.
+//carregar configuracoes do azure
+builder.Services.Configure<AzureServiceBusSettings>(builder.Configuration.GetSection("AzureServiceBusSettings"));
 
-// Registra a interface do Repositório (ITransacaoRepository) e sua implementação (TransacaoRepository)
+// registrar o serviceBusClient como singleton
+builder.Services.AddSingleton<ServiceBusClient>(sp =>
+{
+    var settings = sp.GetRequiredService<IOptions<AzureServiceBusSettings>>().Value;
+    return new ServiceBusClient(settings.ConnectionString);
+});
+
+
+// uma nova instï¿½ncia para cada requisiï¿½ï¿½o HTTP.
+
+// Registra a interface do Repositï¿½rio (ITransacaoRepository) e sua implementaï¿½ï¿½o (TransacaoRepository)
 builder.Services.AddScoped<ITransacaoRepository, TransacaoRepository>();
 
-// Registra a interface do Serviço de Aplicação (ITransacaoService) e sua implementação (TransacaoService)
-builder.Services.AddScoped<ITransacaoService, TransacaoService>();
+// NOVO REGISTRO: Registra a interface do Produtor de Mensagens do Service Bus e sua implementaï¿½ï¿½o
+builder.Services.AddScoped<IMensagemServiceBusProdutor, ServiceBusProdutor>(); 
 
-// Configurações Padrão 
+// Registra a interface do Serviï¿½o de Aplicaï¿½ï¿½o (ITransacaoService) e sua implementaï¿½ï¿½o (TransacaoService)
+// O TransacaoService agora injeta IMensagemServiceProdutor
+builder.Services.AddScoped<ITransacaoService, TransacaoService>(); // Esta linha permanece
+
+// Configuraï¿½ï¿½es Padrï¿½o
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -46,7 +63,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 /*
-// configuração do pipeline das requisições
+// configuraï¿½ï¿½o do pipeline das requisiï¿½ï¿½es
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -54,7 +71,7 @@ if (app.Environment.IsDevelopment())
 }
 */
 
-// TEMPORARIO para testes - 
+// TEMPORARIO para testes -
 app.UseSwagger();
 app.UseSwaggerUI();
 

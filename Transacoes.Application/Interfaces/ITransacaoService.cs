@@ -12,5 +12,6 @@ namespace Transacoes.Application.Interfaces
 
         // Método para obter todas as transações
         Task<IEnumerable<Transacao>> ObterTodasTransacoesAsync();
+ 
     }
 }

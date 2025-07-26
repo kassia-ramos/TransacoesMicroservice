@@ -34,3 +34,6 @@ node_modules/
 
 # Thumbs.db (Windows)
 Thumbs.db
+
+#ignorar arquivos de configuracao de desenvolvimento
+appsettings.Development.json
